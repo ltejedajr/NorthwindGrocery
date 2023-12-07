@@ -13,8 +13,7 @@ function init() {
 
     searchTypeDropdown.onchange = searchTypeDropdownOnChange;
 
-    categoryDropdown.style.display = "none";
-
+    handleCategoryDropdown(searchTypeDropdown, categoryDropdown);
 }
 
 function searchTypeDropdownOnChange() {
@@ -25,7 +24,7 @@ function searchTypeDropdownOnChange() {
     }
     else if (selectedType === "viewAll") {
         viewAllOption(searchTypeDropdown);
-        categoryDropdown.style.display = "none";
+        // categoryDropdown.style.display = "none";
     }
 }
 
@@ -51,7 +50,7 @@ function handleCategoryDropdown(searchTypeDropdown, categoryDropdown) {
 }
 
 function categoryDropdownPopulate() {
-    categoryDropdown.onchange = () => {
+    // categoryDropdown.onchange = () => {
         const categoryIdSelected = categoryDropdown.value;
         console.log(`Selected Category ID: ${categoryIdSelected}`);
 
@@ -71,7 +70,7 @@ function categoryDropdownPopulate() {
             });
     };
 
-}
+//}
 
 function productDataPopulate(productData) {
 
@@ -105,6 +104,7 @@ function productDataPopulate(productData) {
         searchResultsDiv.appendChild(card);
 
     }
+
 }
 
 function viewAllOption() {
